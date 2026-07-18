@@ -19,10 +19,20 @@ Two pieces make this survive X's frequent web-app changes:
 
 ## Install
 
-1. Open `chrome://extensions`
-2. Enable **Developer mode** (top right)
-3. Click **Load unpacked** and select this folder
-4. Log in to x.com and browse — flags fill in as the queue works through visible users
+### From a release (no build tools needed)
+
+1. Download the `.zip` from the [latest release](https://github.com/vladyslavnes/x-location-checker/releases/latest) and unzip it
+2. Open `chrome://extensions`
+3. Enable **Developer mode** (top right)
+4. Click **Load unpacked** and select the unzipped folder
+5. Log in to x.com — click the 📍 next to any name to check a location
+
+Note: Chrome shows a "developer mode extensions" reminder on startup for
+extensions installed this way; that's normal.
+
+### From source
+
+Same as above, but select this repository folder at step 4.
 
 ## Caveats
 
