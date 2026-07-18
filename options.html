@@ -1,0 +1,133 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>X Location Checker — Options</title>
+    <style>
+      body {
+        font-family: -apple-system, "Segoe UI", Roboto, sans-serif;
+        margin: 24px;
+        min-width: 280px;
+        color: #0f1419;
+      }
+      h1 {
+        font-size: 16px;
+        margin: 0 0 12px;
+      }
+      fieldset {
+        border: 1px solid #cfd9de;
+        border-radius: 8px;
+        padding: 12px 16px;
+      }
+      legend {
+        font-size: 13px;
+        color: #536471;
+        padding: 0 4px;
+      }
+      label {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 6px 0;
+        font-size: 14px;
+        cursor: pointer;
+      }
+      .example {
+        color: #536471;
+        font-size: 12px;
+        margin-left: auto;
+      }
+      #status {
+        font-size: 12px;
+        color: #00ba7c;
+        height: 16px;
+        margin-top: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>X Location Checker</h1>
+    <fieldset>
+      <legend>Badge display</legend>
+      <label>
+        <input type="radio" name="mode" value="flag" />
+        Flag only <span class="example">🇺🇸</span>
+      </label>
+      <label>
+        <input type="radio" name="mode" value="text" />
+        Country name <span class="example">United States</span>
+      </label>
+      <label>
+        <input type="radio" name="mode" value="both" />
+        Flag + name <span class="example">🇺🇸 United States</span>
+      </label>
+    </fieldset>
+    <fieldset style="margin-top: 12px">
+      <legend>Badge placement</legend>
+      <label>
+        <input type="radio" name="placement" value="name" />
+        After name <span class="example">Jack 🇺🇸 @jack</span>
+      </label>
+      <label>
+        <input type="radio" name="placement" value="date" />
+        After date <span class="example">@jack · 2h 🇺🇸</span>
+      </label>
+      <label>
+        <input type="radio" name="placement" value="button" />
+        Check-location button
+        <span class="example">📍 click to look up</span>
+      </label>
+      <div style="font-size: 12px; color: #536471; margin-top: 4px">
+        Button mode does no automatic lookups — X rate-limits the location
+        endpoint, so on busy timelines auto mode can pause for up to 15
+        minutes. The button only spends quota on users you actually ask about.
+      </div>
+    </fieldset>
+    <fieldset style="margin-top: 12px">
+      <legend>Fun</legend>
+      <label>
+        <input type="checkbox" id="gdpSizing" />
+        GDP text sizing
+        <span class="example">bigger economy, bigger opinion</span>
+      </label>
+      <label>
+        <input type="radio" name="tiermode" value="builtin" />
+        Built-in tiers
+        <span class="example">1st ×1.5 · 2nd ×1 · 3rd ×0.75</span>
+      </label>
+      <label>
+        <input type="radio" name="tiermode" value="custom" />
+        Custom categories
+      </label>
+      <div id="customEditor" style="display: none; margin-top: 8px">
+        <textarea
+          id="customTiers"
+          rows="6"
+          style="width: 100%; box-sizing: border-box; font-family: monospace; font-size: 12px"
+          placeholder="one category per line — size: countries
+1.5: US, Germany, Japan
+0.75: India, Nigeria
+2: Ukraine
+# lines starting with # are ignored"
+        ></textarea>
+        <label style="font-size: 13px">
+          Size for uncategorized countries:
+          <input
+            id="defaultScale"
+            type="number"
+            step="0.05"
+            min="0.3"
+            max="3"
+            value="1"
+            style="width: 64px"
+          />
+        </label>
+        <button id="saveCustom" style="margin-top: 6px">Save categories</button>
+        <div id="customError" style="color: #f4212e; font-size: 12px"></div>
+      </div>
+    </fieldset>
+    <div id="status"></div>
+    <script src="countries.js"></script>
+    <script src="options.js"></script>
+  </body>
+</html>
