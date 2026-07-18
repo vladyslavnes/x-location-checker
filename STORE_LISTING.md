@@ -8,25 +8,58 @@ Shows the X-verified "account based in" country next to user names on X/Twitter.
 
 ## Detailed description
 
-Ever wonder where an account is actually posting from? X shows a verified
-"Account based in" country on every profile's About page — but only if you go
-digging. X Location Checker surfaces it right in your timeline.
+Ever wonder where an account is actually posting from?
 
-Features:
-• 📍 Check-location button next to user names — click to look up any account's
-  X-verified country (default mode, zero background requests)
-• Automatic mode: flags fill in as you scroll, smartly paced to respect X's
-  rate limits
-• Display options: flag, country name, or both; place the badge after the
-  name or after the date
-• Results cached locally, so known accounts show instantly
-• Fun extra (off by default): GDP text sizing — scale tweet text by the
-  author country's economic tier, with fully customizable categories
+X verifies every account's "based in" country — but hides it three clicks
+deep on the About page. X Location Checker puts it right in your timeline,
+next to the name.
 
-Notes:
+HOW IT WORKS
+
+• Click the 📍 next to any user name to reveal their X-verified country —
+  flag, name, or both
+• Or switch on automatic mode and watch flags fill in as you scroll
+• Hover any badge to see the exact value X reports
+• Already-checked accounts are remembered, so they show instantly forever
+
+WHY IT'S TRUSTWORTHY DATA
+
+This is not the free-text "location" from user bios ("the moon", "she/her",
+"hell") — it's the country X itself determines and publishes on every
+profile's About page. Same data, zero digging.
+
+FEATURES
+
+• Check-location button mode (default): looks up only who you ask about —
+  light, private, never rate-limited
+• Auto mode: paces itself against X's API quota so lookups keep flowing
+  without interruptions
+• Display: flag only, country name only, or both
+• Placement: after the name or after the timestamp
+• Every ISO country recognized, with correct flags
+• Results cached locally — fast, and works on accounts you've seen even
+  before any lookup
+
+THE FUN PART
+
+GDP text sizing (off by default): scales tweet text by the economic tier of
+the author's country. First-world opinions get ×1.5, third-world ×0.75.
+Don't like our world order? Build your own — custom categories let you
+assign any size to any set of countries. Finally, a timeline where font
+size equals purchasing power.
+
+PRIVACY
+
+• No tracking, no analytics, no external servers
+• Talks only to X's own API, using your own logged-in session
+• Everything is stored locally in your browser
+• Fully open source: github.com/vladyslavnes/x-location-checker
+
+NOTES
+
 • Requires being logged in to X
-• Uses only X's own APIs with your own session — no third-party servers
-• Not every account exposes a based-in country
+• Some accounts don't expose a based-in country (older accounts, some
+  regions) — those simply get no badge
 
 ## Category
 Social & Communication
